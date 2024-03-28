@@ -1,4 +1,4 @@
-import { UMES_ContentScript } from "@umes/web-ext-library/dist/content"
+import { UMES_ContentScript } from "@umes/web-ext-library"
 
 (async () => {
     var UMES = new UMES_ContentScript("http://umes.ddns.net/api", true)

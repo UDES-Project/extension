@@ -1,4 +1,4 @@
-import { UMES_Script } from "@umes/web-ext-library/dist/script"
+import { UMES_Script } from "@umes/web-ext-library"
 
 var deleteSecurityMessage = setInterval(() => {
     var element = document.querySelector(".absolute")

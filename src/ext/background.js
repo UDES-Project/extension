@@ -1,3 +1,3 @@
-import "@umes/web-ext-library/dist/background"
+import "@umes/web-ext-library/lib/background"
 
 console.log("loading background.js")
