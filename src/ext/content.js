@@ -1,9 +1,10 @@
 import { UMES_ContentScript } from "@umes/web-ext-library"
 
 (async () => {
-    var UMES = new UMES_ContentScript("http://umes.ddns.net/api", true)
+    var UMES = new UMES_ContentScript("http://udes.ddns.net/api", true)
 
-    UMES.setMessageContainer(".mb-2", ".text-gray-800", (message) => {
+    UMES.setMessageContainer("#messages", ".content", (message) => {
+        console.log(message)
         var content = message.textContent
         
         if (UMES.isUMESMessage(content)) {

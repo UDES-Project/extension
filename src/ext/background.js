@@ -1,3 +1,3 @@
-import "@umes/web-ext-library/lib/background"
+import { UMES_Background } from "@umes/web-ext-library"
 
-console.log("loading background.js")
+var UMES = new UMES_Background("Extension", "icons/iconfull.png")
