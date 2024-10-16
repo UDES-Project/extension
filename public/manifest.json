@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "UMES Extension",
+    "name": "UDES Extension",
     "version": "1.0",
     "background": {
         "scripts": [
@@ -11,7 +11,8 @@
     "content_scripts": [
         {
             "matches": [
-                "*://udes.ddns.net/chat/*"
+                "http://localhost/*",
+                "https://udes.app/*"
             ],
             "js": [
                 "content.js"
@@ -30,5 +31,9 @@
         "48": "icons/icon48.png",
         "64": "icons/icon64.png",
         "128": "icons/icon128.png"
-    }
+    },
+    "permissions": [
+        "http://localhost:3000/",
+        "https://udes.app/"
+    ]
 }

@@ -1,3 +1,5 @@
-import { UMES_Background } from "@umes/web-ext-library"
+import { UDES_Background } from "@udes-lib/web-ext"
 
-var UMES = new UMES_Background("Extension", "icons/iconfull.png")
+console.log("Background")
+
+var UDES = new UDES_Background("Extension", "icons/iconfull.png")

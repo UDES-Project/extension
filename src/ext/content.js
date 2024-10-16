@@ -1,18 +1,22 @@
-import { UMES_ContentScript } from "@umes/web-ext-library"
+import { UDES_ContentScript } from "@udes-lib/web-ext"
+
+console.log("Content Script");
 
 (async () => {
-    var UMES = new UMES_ContentScript("http://udes.ddns.net/api", true)
+    var UDES = new UDES_ContentScript("http://127.0.0.1:5000/api", true)
 
-    UMES.setMessageContainer("#messages", ".content", (message) => {
-        console.log(message)
-        var content = message.textContent
+    // UDES.setMessageContainer("#messages", ".message-container .content", (message) => {
+    //     if (!message) { return } // SHOULD BE DONE IN THE LIB
         
-        if (UMES.isUMESMessage(content)) {
-            UMES.decryptMessage(content, (decrypted) => {
-                message.textContent = decrypted
-            })
-        }
-    })
+    //     console.log(message)
+    //     var content = message.textContent
+        
+    //     if (UDES.isUDESMessage(content)) {
+    //         UDES.decryptMessage(content, null, (decrypted) => {
+    //             message.textContent = decrypted
+    //         })
+    //     }
+    // })
 
-    UMES.injectScript("script.js", "body")
+    UDES.injectScript("script.js", "body")
 })()

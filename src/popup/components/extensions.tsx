@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { UMES_Popup } from "@umes/web-ext-library"
+import { UDES_Popup } from "@udes-lib/web-ext"
 
 interface Extension {
     name: string
@@ -29,7 +29,7 @@ export default function Extensions() {
     const [extensions, setExtensions] = useState<Extension[]>([])
 
     useEffect(() => {
-        UMES_Popup.getExtensions((ext: Extension) => setExtensions([...extensions, ext]))
+        UDES_Popup.getExtensions((ext: Extension) => setExtensions([...extensions, ext]))
     }, [])
 
     return <div>

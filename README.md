@@ -1,9 +1,9 @@
-# UMES Extension
+# UDES Extension
 
 ## Build
 
 ```bash
-git clone https://github.com/UMES-Project/extension
+git clone https://github.com/UDES-Project/extension
 cd extension
 pnpm i
 pnpm run build
