@@ -1,12 +1,11 @@
 import { UDES_Script } from "@udes-lib/web-ext"
 
-var deleteWarningMessage = setInterval(() => {
+setInterval(() => {
     var element = document.querySelector("#udes-warning")
     if (element) { 
         element.remove()
-        clearInterval(deleteWarningMessage)
     }
-})
+}, 500)
 
 console.log("Script")
 

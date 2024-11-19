@@ -34,6 +34,7 @@
     },
     "permissions": [
         "http://localhost:3000/",
-        "https://udes.app/"
+        "https://udes.app/",
+        "storage"
     ]
 }
