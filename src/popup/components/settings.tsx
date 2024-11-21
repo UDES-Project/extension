@@ -13,7 +13,7 @@ import { useEffect, useState } from "react"
 // }
 
 function Input({ name, value, onChange }: { name: string, value: string, onChange: (value: string) => void }) {
-    return <div className="flex gap-4 items-center justify-between p-2 px-4 border-b">
+    return <div className="flex gap-4 items-center justify-between p-2 px-8 border-b">
         <label>{name}</label>
         <input
             className="border p-1 px-2 rounded"
@@ -33,6 +33,10 @@ function Input({ name, value, onChange }: { name: string, value: string, onChang
 //         </select>
 //     </div>
 // }
+
+function Button({ name, onClick }: { name: string, onClick: () => void }) {
+    return <button className="p-2 px-4 border m-4" onClick={onClick}>{name}</button>
+}
 
 function setting(name: string, defaultValue: any) {
     name = "UDES_" + name
@@ -70,9 +74,24 @@ export default function Settings() {
             })
         })
     }, [])
+
+    const [testConnectionResult, setTestConnectionResult] = useState("")
+    const testConnection = () => {
+        fetch(serverUrl + "/info").then((res) => res.json()).then((data) => {
+            if (data.server_name) {
+                setTestConnectionResult("Connected to " + data.server_name)
+            } else {
+                setTestConnectionResult(`Bad response from ${serverUrl}`)
+            }
+        }).catch(() => {
+            setTestConnectionResult(`Failed to connect to ${serverUrl}`)
+        })
+    }
     
     return <div className="flex flex-col">
         <Input name="Server URL" value={serverUrl} onChange={setServerUrl}/>
+        <Button name="Test Connection" onClick={testConnection}/>
+        <span className="px-4">{testConnectionResult}</span>
         {/* <Checkbox name="Setting 1" checked={true} onChange={() => {}}/>
         <Input name="Setting 2" value="Value" onChange={() => {}}/>
         <Select name="Setting 3" options={["Option 1", "Option 2", "Option 3"]} value="Option 1" onChange={() => {}}/> */}
