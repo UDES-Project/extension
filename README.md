@@ -5,8 +5,8 @@
 ```bash
 git clone https://github.com/UDES-Project/extension
 cd extension
-pnpm i
-pnpm run build
+npm i
+npm run build
 ```
 
 Out directory: "dist"
