@@ -34,7 +34,7 @@ export default function Extensions() {
         {
             "name": "Discord Web",
             "icon": "icons/discord.png",
-            "install": "https://udes.app/",
+            "install": "https://github.com/UDES-Project/discord-client",
             "github": "https://github.com/UDES-Project/discord-client"
         }
     ])
