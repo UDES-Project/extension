@@ -3,7 +3,7 @@ import Tabs from "./components/tabs"
 
 function App() {
 
-    const [activeTab, setActiveTab] = useState("🏠 Home")
+    const [activeTab, setActiveTab] = useState("Home")
     const [tabContent, setTabContent] = useState(<></>)
 
     return <>

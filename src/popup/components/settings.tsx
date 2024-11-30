@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { defaults } from "../../defaults"
 
 // function Checkbox({ name, checked, onChange }: { name: string, checked: boolean, onChange: (checked: boolean) => void }) {
 //     return <div className="flex gap-4 items-center justify-between p-2 px-4 border-b">
@@ -63,7 +62,7 @@ function setting(name: string, defaultValue: any) {
 
 export default function Settings() {
 
-    const [serverUrl, setServerUrl, serverUrlSetting] = setting("serverUrl", defaults.UDES_serverUrl)
+    const [serverUrl, setServerUrl, serverUrlSetting] = setting("serverUrl", "https://udes.app/api")
 
     const settings = [serverUrlSetting]
 
@@ -96,5 +95,7 @@ export default function Settings() {
         {/* <Checkbox name="Setting 1" checked={true} onChange={() => {}}/>
         <Input name="Setting 2" value="Value" onChange={() => {}}/>
         <Select name="Setting 3" options={["Option 1", "Option 2", "Option 3"]} value="Option 1" onChange={() => {}}/> */}
+        {/* @ts-ignore */}
+        <span className="text-center text-sm text-gray-700">Version {browser.runtime.getManifest().version}</span>
     </div>
 }

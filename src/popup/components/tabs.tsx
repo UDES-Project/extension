@@ -6,9 +6,9 @@ import Settings from "./settings"
 export default function Tabs({active, setActive, setTabContent}: {active: string, setActive: (key: string) => void, setTabContent: (content: JSX.Element) => void}) {
 
     const tabs: any = {
-        "🏠 Home": <Home/>,
-        "🧱 Extensions": <Extensions/>,
-        "📝 Settings": <Settings/>
+        "Home": <Home/>,
+        "Extensions": <Extensions/>,
+        "Settings": <Settings/>
     }
 
     useEffect(() => {

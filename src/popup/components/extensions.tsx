@@ -40,7 +40,7 @@ export default function Extensions() {
     ])
 
     useEffect(() => {
-        UDES_Popup.getExtensions((ext: Extension) => setExtensions([ext, ...extensions]))
+        UDES_Popup.getExtensions((ext: Extension) => setExtensions((prev) => [ext, ...prev]))
     }, [])
 
     return <div>
